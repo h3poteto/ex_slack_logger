@@ -1,9 +1,9 @@
-defmodule SlackLogger.MixProject do
+defmodule ExSlackLogger.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :slack_logger,
+      app: :ex_slack_logger,
       version: "0.1.0",
       elixir: "~> 1.5",
       start_permanent: Mix.env() == :prod,
