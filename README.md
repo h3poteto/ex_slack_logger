@@ -1,11 +1,10 @@
 # SlackLogger
 
-**TODO: Add description**
+SlackLogger is a logger backend module for Slack.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `slack_logger` to your list of dependencies in `mix.exs`:
+Add `slack_logger` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -15,7 +14,24 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/slack_logger](https://hexdocs.pm/slack_logger).
+## Usage
+At frist, add SlackLogger as logger backend in your `config.exs`.
 
+```elixir
+config :logger, backends: [:console, SlackLogger]
+```
+
+Next, configure logger backend.
+
+```elixir
+config :logger, SlackLogger,
+  level: :error,
+  hook_url: {:system, "SLACK_WEBHOOK_URL"},
+  channel: "#your_slack_channel_name",
+  username: "slack_user_name"
+```
+
+After that, you can receive application log in your slack channel.
+
+## License
+The software is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
