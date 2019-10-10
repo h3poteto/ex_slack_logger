@@ -1,4 +1,26 @@
 defmodule SlackLogger do
+  @moduledoc """
+  SlackLogger is a logger backend module for Slack.
+
+  ## Example
+  At frist, add SlackLogger as logger backend in your config.exs.
+
+  ```elixir
+  config :logger, backends: [:console, SlackLogger]
+  ```
+
+  Next, configure logger backend.
+
+  ```elixir
+  config :logger, SlackLogger,
+    level: :error,
+    hook_url: {:system, "SLACK_WEBHOOK_URL"},
+    channel: "#your_slack_channel_name",
+    username: "slack_user_name"
+  ```
+
+  After that, you can receive application log in your slack channel.
+  """
   @behaviour :gen_event
 
   def init(__MODULE__) do
@@ -71,7 +93,7 @@ defmodule SlackLogger do
     end
   end
 
-  def parse_timex(timestamps) do
+  defp parse_timex(timestamps) do
     {date, {h, m, s, _min}} = timestamps
     {date, {h, m, s}}
   end
