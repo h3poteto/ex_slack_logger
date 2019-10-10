@@ -1,18 +1,18 @@
-defmodule SlackLogger do
+defmodule ExSlackLogger do
   @moduledoc """
-  SlackLogger is a logger backend module for Slack.
+  ExSlackLogger is a logger backend module for Slack.
 
   ## Example
-  At frist, add SlackLogger as logger backend in your config.exs.
+  At frist, add ExSlackLogger as logger backend in your config.exs.
 
   ```elixir
-  config :logger, backends: [:console, SlackLogger]
+  config :logger, backends: [:console, ExSlackLogger]
   ```
 
   Next, configure logger backend.
 
   ```elixir
-  config :logger, SlackLogger,
+  config :logger, ExSlackLogger,
     level: :error,
     hook_url: {:system, "SLACK_WEBHOOK_URL"},
     channel: "#your_slack_channel_name",

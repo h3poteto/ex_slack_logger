@@ -1,30 +1,30 @@
-# SlackLogger
+# ExSlackLogger
 
-SlackLogger is a logger backend module for Slack.
+ExSlackLogger is a logger backend module for Slack.
 
 ## Installation
 
-Add `slack_logger` to your list of dependencies in `mix.exs`:
+Add `ex_slack_logger` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:slack_logger, "~> 0.1.0"}
+    {:ex_slack_logger, "~> 0.1.0"}
   ]
 end
 ```
 
 ## Usage
-At frist, add SlackLogger as logger backend in your `config.exs`.
+At frist, add ExSlackLogger as logger backend in your `config.exs`.
 
 ```elixir
-config :logger, backends: [:console, SlackLogger]
+config :logger, backends: [:console, ExSlackLogger]
 ```
 
 Next, configure logger backend.
 
 ```elixir
-config :logger, SlackLogger,
+config :logger, ExSlackLogger,
   level: :error,
   hook_url: {:system, "SLACK_WEBHOOK_URL"},
   channel: "#your_slack_channel_name",
