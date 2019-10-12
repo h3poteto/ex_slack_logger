@@ -28,7 +28,7 @@ defmodule ExSlackLogger.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.6"},
-      {:poison, "~> 3.1"},
+      {:poison, "~> 4.0"},
       {:timex, "~> 3.5"},
       {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false}
