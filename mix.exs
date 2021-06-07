@@ -30,7 +30,7 @@ defmodule ExSlackLogger.MixProject do
       {:httpoison, "~> 1.6"},
       {:poison, "~> 4.0"},
       {:timex, "~> 3.5"},
-      {:credo, "~> 1.2.1", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.5.6", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false}
     ]
   end
